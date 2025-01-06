@@ -1,0 +1,20 @@
+{
+  "name": "chollometro2",
+  "version": "1.0.0",
+  "description": "Nombre pendiente",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [
+    "openwhisk",
+    "rastreador",
+    "precios",
+    "ofertas"
+  ],
+  "author": "SIF",
+  "license": "No se, abstenganse abogados",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.12",
+    "mongodb": "^6.3.0",
+    "node-fetch": "^2.6.1"
+  }
+} 

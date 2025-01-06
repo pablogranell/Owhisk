@@ -1,0 +1,44 @@
+packages:
+  chollometro2:
+    version: 1.0.0
+    license: No se, abstenganse abogados
+    actions:
+      verificar-precios:
+        function: acciones/programadas/verificar_precios.js
+        runtime: nodejs:18
+        inputs:
+          frecuencia: "*/5 * * * *" #cada 5 minutos
+        annotations:
+          web-export: true
+      obtener-info-producto:
+        function: acciones/bajo_demanda/obtener_info_producto.js
+        runtime: nodejs:18
+        annotations:
+          web-export: true
+      agregar-producto:
+        function: acciones/bajo_demanda/agregar_producto.js
+        runtime: nodejs:18
+        annotations:
+          web-export: true
+      actualizar-precio:
+        function: acciones/internas/actualizar_precio.js
+        runtime: nodejs:18
+      enviar-alerta:
+        function: acciones/notificaciones/enviar_alerta.js
+        runtime: nodejs:18
+    sequences:
+      verificar-y-notificar:
+        actions: obtener-info-producto,enviar-alerta
+        annotations:
+          web-export: true
+    triggers:
+      nuevo-producto:
+        annotations:
+          feed: /whisk.system/alarms/interval
+          parameters:
+            - name: cron
+              value: "*/5 * * * *"
+    rules:
+      activar-verificar-y-notificar:
+        trigger: nuevo-producto
+        action: verificar-y-notificar 
