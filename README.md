@@ -4,7 +4,9 @@ Para ejectuar(CMD):
 1. abrir docker desktop
 2. java -jar .\openwhisk-standalone.jar
 3. wsk.exe project deploy
-4. wsk.exe action invoke chollometro2/hola-mundo
+4. (Para probar) http://localhost:3233/api/v1/web/guest/chollometro2/hola-mundo
+o
+5. wsk action invoke chollometro2/hola-mundo -r
 
 Pido perdon por cambiar la rama por defecto a main, habia intentado poner LFS pero no me funcionaba.
 
