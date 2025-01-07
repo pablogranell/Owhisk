@@ -1,3 +1,9 @@
+Para probar:
+
+wsk project deploy
+
+wsk action invoke /guest/chollometro2/testeos -r
+
 Ya no es necesaria la compilacion, usa: https://mega.co.nz/#!0g0XkJiQ!Lk7XCyGwi_R1E_NhoXnL_k3ZrHhO1h0tOW18Wa9G44I
 
 Para ejectuar(CMD):
