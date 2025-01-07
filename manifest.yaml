@@ -3,6 +3,11 @@ packages:
     version: 1.0.0
     license: No se, abstenganse abogados
     actions:
+      testeos:
+        function: utilidades/testeos.js
+        runtime: nodejs:18
+        annotations:
+          web-export: true
       verificar-precios:
         function: acciones/programadas/verificar_precios.js
         runtime: nodejs:18
