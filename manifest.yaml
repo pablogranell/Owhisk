@@ -20,3 +20,6 @@ project:
         runtime:
           location: dist/runtime.js
           runtime: nodejs:default
+        listProducts:
+          location: dist/listProducts.js
+          runtime: nodejs:default
