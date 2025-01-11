@@ -21,3 +21,13 @@ Compilacion:
 Necesita java, su SDK, docker y node para compilar
 
 Dejo WSK.exe que es la CLI
+
+
+NUEVA DOCU
+
+
+docker run -it -v /var/run/docker.sock:/var/run/docker.sock -p 3233:3233 -p 3232:3232 openwhisk/standalone:8f8a4aa 
+
+
+docker run -d --name my-postgres-db -e POSTGRES_USER=rse_user -e POSTGRES_PASSWORD=rse_password-e POSTGRES_DB=owhiskdb \ 
+-p 5432:5432 -v postgres_data:/var/lib/postgresql/data postgres:latest
