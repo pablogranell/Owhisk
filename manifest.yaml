@@ -8,3 +8,6 @@ project:
         addProduct: 
           location: dist/addProduct.js
           runtime: nodejs:default
+        scraper:
+          location: dist/scraper.js
+          runtime: nodejs:default

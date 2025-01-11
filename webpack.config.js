@@ -5,6 +5,7 @@ module.exports = {
     target: 'node',
     entry: {
         addProduct: './lib/addProduct.js',
+        scraper: './lib/scraper.js',
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
