@@ -8,12 +8,15 @@ project:
         addProduct: 
           location: dist/addProduct.js
           runtime: nodejs:default
+        deleteProduct:
+          location: dist/deleteProduct.js
+          runtime: nodejs:default
         scraper:
           location: dist/scraper.js
           runtime: nodejs:default
         enviarNotificacion:
           location: dist/enviarNotificacion.js
           runtime: nodejs:default
-        Periodo:
-          location: dist/Periodo.js
+        runtime:
+          location: dist/runtime.js
           runtime: nodejs:default
