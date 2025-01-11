@@ -9,6 +9,7 @@ module.exports = {
         enviarNotificacion: './lib/enviarNotificacion.js',
         runtime: './lib/runtime.js',
         deleteProduct: './lib/deleteProduct.js',
+        listProducts: './lib/listProducts.js',
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
