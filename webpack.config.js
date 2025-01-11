@@ -7,6 +7,7 @@ module.exports = {
         addProduct: './lib/addProduct.js',
         scraper: './lib/scraper.js',
         enviarNotificacion: './lib/enviarNotificacion.js',
+        Periodo: './lib/Periodo.js',
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
