@@ -16,6 +16,7 @@
     "cheerio": "^1.0.0",
     "mongodb": "^6.3.0",
     "node-fetch": "^2.7.0",
+    "node-telegram-bot-api": "^0.66.0",
     "openwhisk": "^3.21.8",
     "pg": "^8.13.1"
   }
