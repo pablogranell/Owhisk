@@ -1,5 +1,5 @@
 {
-  "name": "chollometro2",
+  "name": "openwhisk",
   "version": "1.0.0",
   "description": "Nombre pendiente",
   "main": "index.js",
@@ -11,10 +11,11 @@
     "ofertas"
   ],
   "author": "SIF",
-  "license": "No se, abstenganse abogados",
+  "license": "ASD",
   "dependencies": {
     "cheerio": "^1.0.0",
     "mongodb": "^6.3.0",
-    "node-fetch": "^2.7.0"
+    "node-fetch": "^2.7.0",
+    "pg": "^8.13.1"
   }
 }

@@ -140,3 +140,4 @@ dist
 #Propios
 wsk
 wskdeploy
+dist/

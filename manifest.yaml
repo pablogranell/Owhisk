@@ -1,41 +1,10 @@
-packages:
-  chollometro2:
-    version: 1.0.0
-    license: No se, abstenganse abogados
-    actions:
-      testeos:
-        function: utilidades/testeos.js
-        runtime: nodejs:18
-        annotations:
-          web-export: true
-      verificar-precios:
-        function: acciones/programadas/verificar_precios.js
-        runtime: nodejs:18
-        annotations:
-          web-export: true
-      obtener-info-producto:
-        function: acciones/bajo_demanda/obtener_info_producto.js
-        runtime: nodejs:18
-        annotations:
-          web-export: true
-      agregar-producto:
-        function: acciones/bajo_demanda/agregar_producto.js
-        runtime: nodejs:18
-        annotations:
-          web-export: true
-      actualizar-precio:
-        function: acciones/internas/actualizar_precio.js
-        runtime: nodejs:18
-      enviar-alerta:
-        function: acciones/notificaciones/enviar_alerta.js
-        runtime: nodejs:18
-      hola-mundo:
-        function: acciones/hola_mundo.js
-        runtime: nodejs:18
-        annotations:
-          web-export: true
-    sequences:
-      verificar-y-notificar:
-        actions: obtener-info-producto,actualizar-precio,enviar-alerta
-        annotations:
-          web-export: true
+project: 
+  name: owhisk
+  namespace: _
+  packages:
+    lib: 
+      version: 1.0.0
+      actions: 
+        addProduct: 
+          location: dist/addProduct.js
+          runtime: nodejs:default
