@@ -20,8 +20,10 @@ Para probar:
 
 9. wsk action invoke lib/deleteProduct -r -p "id" "1"
 
-10. wsk action invoke lib/runtime -r
+10. wsk action invoke lib/listProducts -r
 
-##NOTA:
+11. wsk action invoke lib/runtime -r
+
+## NOTA:
 
 Dejo WSK.exe que es la CLI de openwhisk para windows.
