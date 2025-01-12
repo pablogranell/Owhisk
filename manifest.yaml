@@ -23,3 +23,6 @@ project:
         listProducts:
           location: dist/listProducts.js
           runtime: nodejs:default
+        scheduler:
+          location: dist/scheduler.js
+          runtime: nodejs:default

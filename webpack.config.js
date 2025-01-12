@@ -10,6 +10,7 @@ module.exports = {
         runtime: './lib/runtime.js',
         deleteProduct: './lib/deleteProduct.js',
         listProducts: './lib/listProducts.js',
+        scheduler: './lib/scheduler.js',
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
