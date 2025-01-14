@@ -138,6 +138,5 @@ dist
 .pnp.*
 
 #Propios
-wsk
 wskdeploy
 dist/
