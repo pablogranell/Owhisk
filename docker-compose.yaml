@@ -12,14 +12,6 @@ services:
       - postgres_data:/var/lib/postgresql/data
     networks:
       - openwhisk-net
-  openwhisk:
-    image: openwhisk/standalone:8f8a4aa
-    container_name: standalone
-    ports:
-      - "3233:3233"
-      - "3232:3232"
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
 
 volumes:
   postgres_data:
