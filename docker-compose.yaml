@@ -18,3 +18,4 @@ volumes:
 networks:
   openwhisk-net:
     driver: bridge
+    external: true
