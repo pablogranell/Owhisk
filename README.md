@@ -1,35 +1,71 @@
-# Openwhisk RSE
+# OpenWhisk RSE - Rastreador de Precios
 
-Para probar:
+Monitoriza precios de productos y recibe notificaciones cuando cambien usando funciones serverless de OpenWhisk.
 
-Instrucciones:
+## Requisitos Previos
 
-1. docker run -it -v /var/run/docker.sock:/var/run/docker.sock -p 3233:3233 -p 3232:3232 openwhisk/standalone:8f8a4aa 
+- Docker & Docker Compose
+- Node.js 18+
+- OpenWhisk CLI (wsk)
+- Token de Bot de Telegram (para notificaciones)
+- PostgreSQL (se instala automáticamente con Docker)
 
-2. docker run -it --name my-postgres-db -e POSTGRES_USER=rse_user -e POSTGRES_PASSWORD=rse_password -e POSTGRES_DB=mydb -p 5432:5432 -v postgres_data:/var/lib/postgresql/data postgres:latest
 
-3. npm install
+## Instrucciones de Instalación
 
-4. webpack
+1. Iniciar el entorno OpenWhisk:
+```
+docker compose up --build
+```
 
-5. wsk property set --apihost http://localhost:3233 --auth 23bc46b1-71f6-4ed5-8c54-816aa4f8c502:123zO3xZCLrMN6v2BKK1dXYFpXlPkccOFqm12CdAsMgRU4VrNZ9lyGVCGuMDGIwP
+2. Instalar dependencias
+```
+npm install
+```
 
-5. wsk project deploy
 
-6. wsk action invoke lib/scraper -r -p "url" "https://deplatec.com/torres-de-oficina/63886-pctec-office-of3-ryzen-7-5700g-16gb-1tb.html"
+3. Empaquetar dependencias
 
-7. wsk action invoke lib/enviarNotificacion -r -p "mensaje" "Hola, esto es una prueba"
+```
+webpack
+```
 
-8. wsk action invoke lib/addProduct -r -p "name" "PCTEC OFFICE OF3 RYZEN 7 5700G | 16GB | 1TB" -p  "price" "349" -p "url" "https://deplatec.com/torres-de-oficina/63886-pctec-office-of3-ryzen-7-5700g-16gb-1tb.html" -p teleid "6963596982"
+4. Configurar credenciales OpenWhisk 
+```
+wsk property set --apihost http://localhost:3233 --auth 23bc46b1-71f6-4ed5-8c54-816aa4f8c502:123zO3xZCLrMN6v2BKK1dXYFpXlPkccOFqm12CdAsMgRU4VrNZ9lyGVCGuMDGIwP
+```
 
-8. wsk action invoke lib/deleteProduct -r -p "id" "1"
 
-9. wsk action invoke lib/listProducts -r
+5. Desplegar el proyecto en OpenWhisk
+```
+wsk project deploy
+```
+6. Añadir un producto 
+```
+wsk action invoke lib/addProduct -r -p name "Ordenador1" -p price "349" -p url "https://deplatec.com/torres-de-oficina/63886-pctec-office-of3-ryzen-7-5700g-16gb-1tb.html" -p teleid "6963596982"
+```
+Tras todos estos comandos se comprobará cada minuto si los precios han bajado y en caso de hacerlo se enviará una notificación al id de telegram añadido al crear el producto. En el ejemplo se añade el id de uno de los alumnos, en caso de querer probarlo se deberá añadir un nuevo id de telegram. 
 
-10. wsk action invoke lib/runtime -r
+## Acciones
 
-11. wsk action invoke lib/scheduler -r
+```
+wsk action invoke lib/scraper -r -p url "https://deplatec.com/torres-de-oficina/63886-pctec-office-of3-ryzen-7-5700g-16gb-1tb.html"
+```
 
-## NOTA:
+```
+wsk action invoke lib/enviarNotificacion -r -p "mensaje" "Hola, esto es una prueba" -p teleid "6963596982"
+```
 
-Dejo WSK.exe que es la CLI de openwhisk para windows.
+```
+wsk action invoke lib/deleteProduct -r -p "id" "1"
+```
+
+```
+wsk action invoke lib/listProducts -r
+```
+
+```
+wsk action invoke lib/runtime -r
+```
+
+
