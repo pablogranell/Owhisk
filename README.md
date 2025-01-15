@@ -20,7 +20,7 @@ Instrucciones:
 
 7. wsk action invoke lib/enviarNotificacion -r -p "mensaje" "Hola, esto es una prueba"
 
-8. wsk action invoke lib/addProduct -r -p "name" "PCTEC OFFICE OF3 RYZEN 7 5700G | 16GB | 1TB" -p  "price" "349" -p "url" "https://deplatec.com/torres-de-oficina/63886-pctec-office-of3-ryzen-7-5700g-16gb-1tb.html"
+8. wsk action invoke lib/addProduct -r -p "name" "PCTEC OFFICE OF3 RYZEN 7 5700G | 16GB | 1TB" -p  "price" "349" -p "url" "https://deplatec.com/torres-de-oficina/63886-pctec-office-of3-ryzen-7-5700g-16gb-1tb.html" -p teleid "6963596982"
 
 8. wsk action invoke lib/deleteProduct -r -p "id" "1"
 
